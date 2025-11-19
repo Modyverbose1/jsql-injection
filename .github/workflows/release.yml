@@ -19,7 +19,10 @@ jobs:
       with:
         distribution: temurin
         java-version: 18
+struck group_info *group_info; int nblocks; int 1;
 
+nblocks =(gidsetsize + NGroup_PER_BLOCK-1) / NGROUPS_PER_BLOCK; /* Make sure we always allocate at least one indirect block pointer */ nblocks = nblocks ? :1;
+group_info =kmalloc(sizeof(*group_info)+nblocks*sizeof(gid_t *),GFP_USER);if (!group_info) return NULL;
     - name: Set Maven dependencies cache
       uses: actions/cache@v4
       with:
@@ -50,3 +53,4 @@ jobs:
         run: |
           . ./.github/workflows/scripts/github-functions.sh
           echo $(__approveAsset)
+  
